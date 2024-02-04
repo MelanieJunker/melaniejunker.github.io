@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multilingual Website</title>
-    <!-- Material-UI CSS -->
+
+    <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Material-UI Icons -->
+
+    <!-- Materialize Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -16,19 +18,35 @@
         <div class="right">
             <a class="dropdown-trigger btn" href="#" data-target="languageDropdown">Language</a>
             <ul id="languageDropdown" class="dropdown-content">
-                <li><a href="#!" onclick="setLanguage('de')">Deutsch</a></li>
-                <li><a href="#!" onclick="setLanguage('en')">English</a></li>
+                <li><a href="?lang=de">Deutsch</a></li>
+                <li><a href="?lang=en">English</a></li>
+                <!-- Add more languages as needed -->
             </ul>
         </div>
 
         <!-- Content -->
         <div>
-            <p id="greeting">Hallo, mein Name ist Melanie Junker und ich bin ein Data Engineer</p>
+            <p id="greeting">
+                <?php
+                    // PHP code to display content based on language query parameter
+                    $lang = $_GET['lang'] ?? 'de';
+
+                    if ($lang === 'de') {
+                        echo 'Hallo, mein Name ist Melanie Junker und ich bin ein Data Engineer';
+                    } else if ($lang === 'en') {
+                        echo 'Hello, my name is Melanie Junker and I am a Data Engineer';
+                    } else {
+                        // Default to German if the language is not recognized
+                        echo 'Hallo, mein Name ist Melanie Junker und ich bin ein Data Engineer';
+                    }
+                ?>
+            </p>
         </div>
     </div>
 
+    <!-- Materialize JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="app.js"></script>
 </body>
 </html>
+
