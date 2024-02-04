@@ -2,76 +2,33 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multilingual Website</title>
-
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Materialize Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Melanie Junker - Data Engineer</title>
 </head>
 <body>
-    <div class="container">
-        <!-- Language Dropdown -->
-        <div class="right">
-            <a class="dropdown-trigger btn" href="#" data-target="languageDropdown">Language</a>
-            <ul id="languageDropdown" class="dropdown-content">
-                <li><a href="?lang=de">Deutsch</a></li>
-                <li><a href="?lang=en">English</a></li>
-                <!-- Add more languages as needed -->
-            </ul>
-        </div>
 
-        <!-- Content -->
-        <div>
-            <p id="greeting"></p>
-        </div>
+    <div style="text-align: center;">
+        <h1>Hallo! Mein Name ist Melanie Junker</h1>
+        <p>und ich bin ein Data Engineer</p>
     </div>
 
-    <!-- Materialize JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <div style="text-align: center; margin-top: 20px;">
+        <h2>Meine Skills</h2>
+        <img src="https://link-zu-javascript-bild.jpg" alt="JavaScript">
+        <img src="https://link-zu-react-bild.jpg" alt="React">
+        <img src="https://link-zu-nodejs-bild.jpg" alt="Node.js">
+        <img src="https://link-zu-typescript-bild.jpg" alt="TypeScript">
+        <img src="https://link-zu-python-bild.jpg" alt="Python">
+        <img src="https://link-zu-pyspark-bild.jpg" alt="PySpark">
+        <img src="https://link-zu-databricks-bild.jpg" alt="Databricks">
+        <img src="https://link-zu-tableau-bild.jpg" alt="Tableau">
+        <img src="https://link-zu-powerbi-bild.jpg" alt="PowerBI">
+    </div>
 
-    <!-- Your JavaScript code -->
-    <script>
-        // Function to get URL parameter by name
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
+    <div style="text-align: center; margin-top: 20px;">
+        <h2>Tableau Public</h2>
+        <p><a href="https://link-zu-deiner-tableau-public-seite" target="_blank">Besuche meine Tableau Public Seite</a></p>
+    </div>
 
-        // Function to set language based on URL parameter
-        function setLanguage() {
-            var lang = getParameterByName('lang') || 'de';
-            var greetingElement = document.getElementById('greeting');
-
-            if (lang === 'de') {
-                greetingElement.textContent = 'Hallo, mein Name ist Melanie Junker und ich bin ein Data Engineer';
-            } else if (lang === 'en') {
-                greetingElement.textContent = 'Hello, my name is Melanie Junker and I am a Data Engineer';
-            } else {
-                // Default to German if the language is not recognized
-                greetingElement.textContent = 'Hallo, mein Name ist Melanie Junker und ich bin ein Data Engineer';
-            }
-        }
-
-        // Initialization of Materialize JavaScript components
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize Materialize dropdown
-            var elems = document.querySelectorAll('.dropdown-trigger');
-            var options = { constrainWidth: false };
-            var instances = M.Dropdown.init(elems, options);
-
-            // Set language on page load
-            setLanguage();
-        });
-    </script>
 </body>
 </html>
